@@ -92,3 +92,12 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
+
+    # - name: 'Tar files'
+    #     run: tar -cvf my_files.tar /path/to/my/directory
+
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v4
+      with:
+        name: o2oa-Artifact
+        path: /home/runner/work/_temp/codeql_databases/java.zip
